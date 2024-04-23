@@ -1,0 +1,36 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.block {
+  background: skyblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.static {
+  background: blue;
+}
+.droppable-element {
+  height: 50px;
+  width: 250px;
+  background: skyblue;
+  margin: 10px;
+  border: 2px dashed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.react-grid-item > .react-resizable-handle::after {
+  content: "";
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  width: 5px;
+  height: 5px;
+  border-right: 2px solid rgba(255, 0, 0, 0.7);
+  border-bottom: 2px solid rgba(255, 0, 0, 0.7);
+}
+.react-grid-item:not(.react-grid-placeholder) {
+  border: 0px solid rgb(255, 255, 255);
+}
