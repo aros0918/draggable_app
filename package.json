@@ -17,6 +17,7 @@
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
+    "react-gauge-component": "^1.2.2",
     "react-grid-layout": "^1.4.4",
     "react-resizable": "^3.0.5",
     "react-scripts": "5.0.1",

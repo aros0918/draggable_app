@@ -23,9 +23,12 @@ const App = () => {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div style={{ display: 'flex', height: '120vh', position: 'relative'}}>
+      <div style={{ display: 'flex', height: '100vh', position: 'relative'}}>
         <LeftPanel />
-        <Affix style={{ position: 'absolute', top: '40px', right: '40px', zIndex: '10'}}>
+        {isRightPanelVisible && <RightPanel />}
+        
+        {/* Affix the toggle button to the top-right corner */}
+        <Affix offsetTop={50} style={{ position: 'absolute', right: 40 }}>
           <div
             style={{
               width: '40px',
@@ -36,13 +39,13 @@ const App = () => {
               justifyContent: 'center',
               alignItems: 'center',
               cursor: 'pointer',
+              zIndex: 1000, // Keep the z-index high to avoid overlaps
             }}
             onClick={toggleRightPanelVisibility}
           >
             <MenuOutlined style={{ color: buttonStyle.color }} />
           </div>
         </Affix>
-        {isRightPanelVisible && <RightPanel />}
       </div>
     </DndProvider>
   );

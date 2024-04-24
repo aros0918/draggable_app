@@ -2,6 +2,9 @@
   font-family: sans-serif;
   text-align: center;
 }
+body {
+  background-color: #eee;
+}
 .block {
   background: skyblue;
   display: flex;
