@@ -14,6 +14,9 @@ const LeftPanel = () => {
   const [items, setItems] = useState([]);
   const [layout, setLayout] = useState([]);
   const [mounted, setMounted] = useState(false);
+  let browserWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  console.log("Browser Width: " + browserWidth);
+  let unit_width = (browserWidth - 19 * 10 - 44 * 2) / 20;
   const marks = {
     10: '10°C',
     90: {
@@ -81,7 +84,7 @@ const LeftPanel = () => {
         y: layoutItem.y,
         w: layoutItem.w,
         h: layoutItem.h,
-        width: layoutItem.w * 66 + (layoutItem.w - 1) * 10,
+        width: layoutItem.w * unit_width + (layoutItem.w - 1) * 10,
         height: layoutItem.h * 30 + (layoutItem.h - 1) * 10,
         imageSrc: null, // Initialize with no image
 
@@ -176,7 +179,7 @@ const LeftPanel = () => {
   //         y: layoutItem.y,
   //         w: layoutItem.w,
   //         h: layoutItem.h,
-  //         width: layoutItem.w * 66 + (layoutItem.w - 1) * 10,
+  //         width: layoutItem.w * unit_width + (layoutItem.w - 1) * 10,
   //         height: layoutItem.h * 30 + (layoutItem.h - 1) * 10,
   //         imageSrc: null, // Initialize with no image
   //       }));
@@ -216,7 +219,7 @@ const LeftPanel = () => {
       </div>
       <ResponsiveReactGridLayout
         rowHeight={30}
-        cols={{ lg: 24, md: 20, sm: 12, xs: 8, xxs: 4 }}
+        cols={{ lg: 20, md: 20, sm: 20, xs: 20, xxs: 20 }}
         layout={layout}
         measureBeforeMount={false}
         useCSSTransforms={mounted}
